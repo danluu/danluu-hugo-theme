@@ -1,0 +1,39 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.post-parent {
+  display: flex;
+}
+.post-dates {
+  width: 5em;
+}
+@media screen and (max-width: 600px) {
+  .post-dates {
+    display: none;
+  }
+  .post-parent {
+    display: flex;
+    padding-bottom: 1em;
+  }
+}
+</style>
+<meta charset="utf-8">
+<title>{{ .Title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ .Description }}">
+<link href="{{ .Site.BaseURL }}/atom.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+<meta name="google-site-verification" content="" />
+{{ template "theme/partials/header.html" . }}
+<body>
+<div id="article">
+<div class="posts">
+{{ range (where .Data.Pages "Type" "post")}}
+<div class="post-parent"><div class="post-dates">{{ .Date.Format "Jan 2006" }}</h4></div><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+{{ end }}
+</div>
+<br>
+{{ template "theme/partials/footer.html" . }}
+</body>
+</html>
