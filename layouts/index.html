@@ -43,11 +43,10 @@ pre { max-width: 100%; height: auto; white-space: pre-wrap }
 <meta name="google-site-verification" content="" />
 {{ template "theme/partials/header.html" . }}
 <body>
-<div id="article">
-<div class="posts">
+<div id="article"><div class="posts">
 {{ range (where .Data.Pages "Type" "post")}}
 <div class="post-parent"><div class="post-dates">{{ .Date.Format "Jan 2006" }}</h4></div><a href="{{ .Permalink }}">{{ .Title }}</a></div>
 {{ end }}
-</div>
+</div></div>
 <br>
 {{ template "theme/partials/footer.html" . }}
