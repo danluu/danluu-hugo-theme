@@ -1,10 +1,9 @@
 {{ template "theme/partials/header.html" . }}
-   <strong>{{ .Title }}</strong></div>
-   <hr/>
-     {{ .Content }}
+<strong>{{ .Title }}</strong>
+<hr/>
+{{ .Content }}
 <div class="navi-parent"> 
-     {{with .Prev}}<a href="{{.Permalink}}">← {{.Title}}</a>{{end}}
-     {{with .Next}}<a href="{{.Permalink}}">{{.Title}} →</a>{{end}}
-    </div>
-    </div>
+{{with .Prev}}<a href="{{.Permalink}}">← {{.Title}}</a>{{end}}
+{{with .Next}}<a href="{{.Permalink}}">{{.Title}} →</a>{{end}}
+</div>
 {{ template "theme/partials/footer.html" . }}
